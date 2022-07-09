@@ -1,0 +1,93 @@
+<!--pages/qiyeguanli/qiyeguanli.wxml-->
+<!-- 提示语句 -->
+<text>============未认证==========</text>
+<view class="remind">请填写完整下方信息，点击提交审核按钮完成认证</view>
+<!-- 提示语句 -->
+
+<!-- 表单 -->
+<form action="">
+  <view class="name form-item">
+    <view class="title">企业名称</view>
+    <input type="text" />
+  </view>
+
+  <view class="id form-item">
+    <view class="title">企业编号</view>
+    <input type="text" />
+  </view>
+
+  <view class="shehuiId form-item">
+    <view class="title">企业社会统一代码</view>
+    <input type="text" />
+  </view>
+
+  <view class="faren form-item">
+    <view class="title">法人</view>
+    <input type="text" />
+  </view>
+
+  <view class="lianxiren form-item">
+    <view class="title">联系人</view>
+    <input type="text" />
+  </view>
+
+  <view class="tel form-item">
+    <view class="title">联系电话</view>
+    <input type="text" />
+  </view>
+
+  <view class="url form-item">
+    <view class="title">企业地址</view>
+    <input type="text" />
+  </view>
+
+  <view class="zhizhao form-item">
+    <view class="title">营业执照</view>
+    <button class="onload">点击上传</button>
+  </view>
+
+  <!-- 提交审核按钮 -->
+  <button class="submit">提交审核</button>
+  <!-- 提交审核按钮 -->
+</form>
+<!-- 表单 -->
+
+
+<text>============已认证==========</text>
+<view class="yirenzheng">
+  <view class="table">
+    <text>企业资料</text>
+    <view class="tr">
+      <view class="td">企业名称</view>
+      <view class="td-last">云南钢友</view>
+    </view>
+    <view class="tr">
+      <view class="td">企业编号</view>
+      <view class="td-last">123456789</view>
+    </view>
+    <view class="tr">
+      <view class="td">企业社会统一代码</view>
+      <view class="td-last">987654321QBG</view>
+    </view>
+    <view class="tr">
+      <view class="td">法人</view>
+      <view class="td-last">张三</view>
+    </view>
+    <view class="tr">
+      <view class="td">联系人</view>
+      <view class="td-last">张三</view>
+    </view>
+    <view class="tr">
+      <view class="td">联系电话</view>
+      <view class="td-last">16608747051</view>
+    </view>
+    <view class="tr">
+      <view class="td">企业地址</view>
+      <view class="td-last">云南省昆明市官渡区黎阳多看几个客户端口号</view>
+    </view>
+    <view class="tr">
+      <view class="td">营业执照</view>
+      <view class="td-last"><image src="../../images/home/news1.png"></image></view>
+    </view>
+  </view>
+</view>

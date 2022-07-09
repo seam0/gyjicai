@@ -1,0 +1,24 @@
+<!--pages/personal/personal.wxml-->
+<view class="box">
+  <view class="item touxiang">
+    <view class="left" bindtap="changeHead">头像</view>
+    <view class="right">
+      <image src="{{userInfo.avatar || 'https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132'}}"></image>
+      <i class="iconfont icon-youjiantou"></i>
+    </view>
+  </view>
+  <view class="item">
+    <view class="left">昵称</view>
+    <view class="right">{{userInfo.nickName}}<i class="iconfont icon-youjiantou"></i></view>
+  </view>
+  <view class="item">
+    <view class="left">性别</view>
+    <view class="right">{{userInfo.sex==0? '男':'女'}} <i class="iconfont icon-youjiantou"></i></view>
+  </view>
+  
+  <view class="item">
+    <view class="left">绑定手机号</view>
+    <view class="right">{{userInfo.phone}}</view>
+  </view>
+</view>
+<view class="exit" bindtap="exit">供应商注册</view>

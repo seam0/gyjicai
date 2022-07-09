@@ -1,0 +1,82 @@
+<!--pages/myPrice/myPrice.wxml-->
+<view class="myPrice">
+  <view class="title">
+    <view>状态</view>
+    <view>计划编号</view>
+    <view>计划标题</view>
+    <view>操作</view>
+  </view>
+  <view class="body">
+  <!-- 每一项 -->
+    <view class="item">
+      <!-- 状态 -->
+      <view class="status">
+        <i></i>
+        <text>审核中</text>
+      </view>
+      <!-- 状态 -->
+
+      <!-- 计划编号 -->
+      <view class="id">200201254</view>
+      <!-- 计划编号 -->
+
+      <!-- 计划标题 -->
+      <view class="plan-title">钢材</view>
+      <!-- 计划标题 -->
+
+      <view class="operation">
+        <button class="contract">下载合同</button>
+        <button class="details" bindtap="tomyPriceDetail">详情</button>
+      </view>
+    </view>
+  <!-- 每一项 -->
+    
+ <!-- 每一项 -->
+ <view class="item">
+      <!-- 状态 -->
+      <view class="status">
+        <i></i>
+        <text>审核中</text>
+      </view>
+      <!-- 状态 -->
+
+      <!-- 计划编号 -->
+      <view class="id">200201254</view>
+      <!-- 计划编号 -->
+
+      <!-- 计划标题 -->
+      <view class="plan-title">钢材</view>
+      <!-- 计划标题 -->
+
+      <view class="operation">
+        <button class="contract">下载合同</button>
+        <button class="details">详情</button>
+      </view>
+    </view>
+  <!-- 每一项 -->
+
+   <!-- 每一项 -->
+   <view class="item">
+      <!-- 状态 -->
+      <view class="status">
+        <i></i>
+        <text>审核中</text>
+      </view>
+      <!-- 状态 -->
+
+      <!-- 计划编号 -->
+      <view class="id">200201254</view>
+      <!-- 计划编号 -->
+
+      <!-- 计划标题 -->
+      <view class="plan-title">钢材</view>
+      <!-- 计划标题 -->
+
+      <view class="operation">
+        <button class="contract">下载合同</button>
+        <button class="details">详情</button>
+      </view>
+    </view>
+  <!-- 每一项 -->
+  </view>
+</view>

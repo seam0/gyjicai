@@ -1,0 +1,51 @@
+{
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#fff"
+  },
+  "pages":[  
+    "pages/home/home",
+    "pages/my/my",
+    "pages/project/project", 
+    "pages/ProjectDetail/ProjectDetail",
+    "pages/publicity/publicity",
+    "pages/qiyeguanli/qiyeguanli",
+    "pages/about/about",
+    "pages/contact/contact",
+    "pages/yiguoqi/yiguoqi",
+    "pages/myPrice/myPrice",
+    "pages/myPriceDetail/myPriceDetail",
+    "pages/personal/personal",
+    "pages/help/help",
+    "pages/qiyerongyu/qiyerongyu"
+  ],
+  "tabBar": {
+    "color":"#a7a7a7",
+    "selectedColor":"#fd664b",
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "首页",
+      "iconPath": "images/tabBar/home.png",
+      "selectedIconPath": "images/tabBar/home-active.png"
+    },{
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "iconPath": "images/tabBar/my.png",
+      "selectedIconPath": "images/tabBar/my-active.png"
+    }]
+  },
+  "usingComponents": {
+    "van-popup": "@vant/weapp/popup/index",
+     "van-action-sheet": "@vant/weapp/action-sheet/index",
+     "van-overlay": "@vant/weapp/overlay/index",
+     "van-stepper": "@vant/weapp/stepper/index",
+     "van-switch": "@vant/weapp/switch/index",
+     "van-search": "@vant/weapp/search/index",
+     "van-collapse": "@vant/weapp/collapse/index",
+    "van-collapse-item": "@vant/weapp/collapse-item/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-steps": "@vant/weapp/steps/index"
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

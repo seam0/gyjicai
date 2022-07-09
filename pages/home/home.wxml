@@ -1,0 +1,120 @@
+<!--pages/home/home.wxml-->
+<view class="home">
+  
+  <!-- 轮播图区域 -->
+  <swiper style="height: 300rpx;" indicator-dots="true" indicator-color="rgba(0,0,0,.2)" indicator-active-color="#fff" autoplay="true" interval="3000" circular="true">
+    <swiper-item wx:for="{{urlList}}" wx:key="imgId">
+      <image class="banner" src="{{item.savePath}}"></image>
+    </swiper-item>
+  </swiper>
+  <!-- 轮播图区域 -->
+
+  <!-- --------------------功能区域------------------------- -->
+  <view class="function">
+    <!-- 项目管理 -->
+    <view class="administration item" bindtap="toProject">
+      <image src="../../images/home/administration.png"></image>
+      <text>项目管理</text>
+    </view>
+    <!-- 项目管理 -->
+
+    <!-- 项目公示 -->
+    <view class="publicity item" bindtap="toPulicity">
+      <image src="../../images/home/open.png"></image>
+      <text>项目公示</text>
+    </view>
+    <!-- 项目公示 -->
+   
+   <!-- 企业管理 -->
+    <view class="register item" bindtap="toQiyeguanli">
+      <image src="../../images/home/register.png"></image>
+      <text>企业管理</text>
+    </view>
+    <!-- 企业管理 -->
+
+    <!-- 我要咨询 -->
+    <view class="help item">
+      <button class="contact" bindtap="contact" open-type="contact">
+      <image src="../../images/home/refer.png"></image>
+    </button>
+    <text>联系客服</text>
+    </view>
+    <!-- 我要咨询 -->
+  </view>
+  <!-- --------------------功能区域------------------------ -->
+
+  <!-- 项目公告区域 -->
+  <view class="open">
+    <view class="decorate">|</view>
+    <view class="title">
+      <text>项目列表</text>
+      <view class="more" bindtap="toProject">更多></view>
+    </view>
+    <view class="open-body">
+      <view class="open-body-item" bindtap="toProjectDetail">
+        <view class="status">20220621001</view>
+        <view class="name">钢材一批</view>
+        <view class="deadline">2022-11-21截止</view>
+      </view>
+      <view class="open-body-item">
+        <view class="status">20220621001</view>
+        <view class="name">钢材一批</view>
+        <view class="deadline">2022-11-21截止</view>
+      </view>
+      <view class="open-body-item">
+        <view class="status">20220621001</view>
+        <view class="name">钢材一批</view>
+        <view class="deadline">2022-11-21截止</view>
+      </view>
+      <view class="open-body-item">
+        <view class="status">20220621001</view>
+        <view class="name">钢材一批</view>
+        <view class="deadline">2022-11-21截止</view>
+      </view>
+      <view class="open-body-item">
+        <view class="status">20220621001</view>
+        <view class="name">钢材一批</view>
+        <view class="deadline">2022-11-21截止</view>
+      </view>
+      <view class="open-body-item">
+        <view class="status">20220621001</view>
+        <view class="name">钢材一批</view>
+        <view class="deadline">2022-11-21截止</view>
+      </view>
+    </view>
+  </view>
+  <!-- 项目公告区域 -->
+
+
+  <!-- 刚友新闻区域 -->
+  <view class="open news">
+    <view class="decorate">|</view>
+    <view class="title">
+      <text>钢友新闻</text>
+    </view>
+    <view class="news-body">
+     <view class="news-body-item">
+       <image src="../../images/home/news1.png"></image>
+       <view class="news-body-item-decorate">
+          <text>一图读懂 新《安全生产法》</text>
+          <view class="news-body-item-time">发布日期：2022-03-19
+          <text>云南钢友</text>
+          </view>
+       </view>
+     </view>
+
+     <!-- 新闻每一项 -->
+     <view class="news-body-item">
+       <image src="../../images/home/news2.png"></image>
+       <view class="news-body-item-decorate">
+          <text>云南钢友积极参与编制钢板加工配送行业相关标准规范</text>
+          <view class="news-body-item-time">发布日期：2022-03-19
+          <text>云南钢友</text>
+          </view>
+       </view>
+     </view>
+      <!-- 新闻每一项 -->
+    </view>
+  </view>
+  <!-- 项目公告区域 -->
+</view>

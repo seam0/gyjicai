@@ -1,0 +1,102 @@
+<!--pages/project/project.wxml-->
+<van-tabs 
+active="{{ active }}" 
+bind:change="onChange"
+line-height="0"
+title-active-color="red"
+>
+
+  <!-- 全部 -->
+  <van-tab title="全部">
+   <!-- 每一项 -->
+    <view class="allItem">
+    <view class="status">进行中</view>
+    <view class="name">钢材一批</view>
+    <view class="time">2022-12-5截止</view>
+    <view class="detail" bindtap="toProjectDetail">我要报价</view>
+    </view>
+    <!-- 每一项 -->
+
+    <!-- 已完成 -->
+    <view class="allItem">
+    <view class="stop-status end-status">已完成</view>
+    <view class="name">钢材一批</view>
+    <view class="time">2022-12-5截止</view>
+    <view class="stop-detail detail" bindtap="toPublicity">查看详情</view>
+    </view>
+     <!-- 已完成 -->
+
+    <!-- 已截止 -->
+    <view class="allItem">
+    <view class="stop-status">已过期</view>
+    <view class="id">钢材一批</view>
+    <view class="name">2012542441</view>
+    <view class="time even-detail detail" bindtap="toYiguoqi">查看详情</view>
+    </view>
+    
+    <!-- 已截止 -->
+   
+  </van-tab>
+   <!-- 全部 -->
+
+   <!-------------- 进行中 ------------------------------->
+  <van-tab title="进行中">
+   <!-- 每一项 -->
+   <view class="allItem">
+    <view class="status">进行中</view>
+    <view class="name">钢材一批</view>
+    <view class="time">2022-12-5截止</view>
+    <view class="detail">查看详情</view>
+    </view>
+    <!-- 每一项 -->
+
+    <!-- 每一项 -->
+    <view class="allItem">
+    <view class="status">进行中</view>
+    <view class="name">钢材一批</view>
+    <view class="time">2022-12-5截止</view>
+    <view class="detail">查看详情</view>
+    </view>
+    <!-- 每一项 -->
+
+    <!-- 每一项 -->
+    <view class="allItem">
+    <view class="status">进行中</view>
+    <view class="name">钢材一批</view>
+    <view class="time">2022-12-5截止</view>
+    <view class="detail">查看详情</view>
+    </view>
+    <!-- 每一项 -->
+
+    <!-- 每一项 -->
+    <view class="allItem">
+    <view class="status">进行中</view>
+    <view class="name">钢材一批</view>
+    <view class="time">2022-12-5截止</view>
+    <view class="detail">查看详情</view>
+    </view>
+    <!-- 每一项 -->
+  </van-tab>
+  <!-- 进行中 -->
+
+  <!-- --------------------------已完成 --------------->
+  <van-tab title="已完成">
+    <view class="allItem">
+    <view class="stop-status end-status">已完成</view>
+    <view class="name">钢材一批</view>
+    <view class="time">2022-12-5截止</view>
+    <view class="stop-detail detail" bindtap="toPublicity">查看详情</view>
+    </view>
+  </van-tab>
+  <!-- 已完成 -->
+
+  <!-- -----------------------已过期-------------------- -->
+  <van-tab title="已过期">
+    <view class="allItem">
+    <view class="stop-status end-status">已完成</view>
+    <view class="name">钢材一批</view>
+    <view class="time">2022-12-5截止</view>
+    <view class="stop-detail detail">查看详情</view>
+    </view>
+  </van-tab>
+</van-tabs>

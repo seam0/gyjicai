@@ -1,0 +1,7 @@
+{
+  "usingComponents": { 
+  },
+  "navigationBarBackgroundColor": "#fd664b",
+  "navigationBarTitleText": "项目公示",
+  "navigationBarTextStyle": "white"
+}

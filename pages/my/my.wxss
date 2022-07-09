@@ -1,0 +1,168 @@
+/* pages/my/my.wxss */
+.top{
+  width: 100%;
+  height: 250rpx;
+}
+page{
+  background-color: #f8f8f8;
+}
+.functionBox{
+margin-bottom: 15rpx;
+padding: 0 30rpx;
+background-color: #fff;
+}
+.user{
+  width: 100%;
+  height: 100%;
+  background-color: #e2292f;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  color: #fffef9;
+}
+
+.top .image{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  /* border: 2px solid #fff; */
+  background-color: #e4e1e1;
+  margin-left: 50rpx;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
+}
+.image image{
+  margin-top: 40rpx;
+  width: 70%;
+  height: 70%;
+}
+.user-info{
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.user-info .text{
+  width: 60%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.box-contant{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.icon-help{
+  font-size: 50rpx !important;
+}
+.icon-youjiantou{
+  font-size: 38rpx !important;
+  margin: 0 !important;
+}
+.icon-qiyeguanli{
+  font-size: 42rpx !important;
+}
+.icon-baojiashenhe{
+  font-size: 50rpx !important;
+}
+.icon-jiage{
+  margin-left: 0 !important;
+}
+.icon-title{
+ display: flex;
+ justify-content: left;
+ align-items: center;
+}
+.user-info .text button::after{
+  border: none;
+}
+.user-info .text button{
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  font-size: 40rpx;
+  text-align: left;
+  color: #fff;
+  height: 100rpx;
+  line-height: 70rpx;
+}
+.user-info .text text{
+  font-size: 25rpx;
+}
+.functionList{
+  width: 100%;
+  height: 500rpx;
+  font-size: 29rpx;
+  margin-top: 20rpx;
+  color: #323232;
+}
+.padding-box{
+  padding: 0 20rpx;
+}
+.functionItem{
+  background-color: #fff;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e9e9e9;
+}
+.one .functionItem:nth-child(3){
+  border: 0;
+}
+.two .functionItem:nth-child(4){
+  border: 0;
+}
+.three .functionItem:nth-child(2){
+  border: 0;
+}
+.functionItem button::after{
+  border: 0;
+}
+.advance{
+  background-color: transparent;
+  height: 80rpx;
+  font-size: 27rpx;
+  display: block;
+  width: 600rpx;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+.functionItem i{
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-size: 45rpx;
+  margin: 0 20rpx;
+  color:black;
+  font-weight: 500;
+}
+
+.open-body-item{
+  display: flex;
+  justify-content: space-around;
+}
+
+.user-login {
+  position: relative;
+}
+
+.erweima{
+  position: absolute;
+  right: 80rpx;
+  width: 80rpx;
+  height: 80rpx;
+  /* border: 1px solid black; */
+}
+
+.icon-saoma{
+  font-size: 70rpx !important;
+}
+

@@ -1,0 +1,144 @@
+/* pages/home/home.wxss */
+.banner{
+  width: 100%;
+  height: 100%;
+}
+.help button::after{
+border: none;
+}
+.help .contact{
+  background-color: #fff;
+  padding: 0 !important;
+  width: 120rpx;
+  height: 120rpx;
+}
+.help image{
+  width: 65rpx !important;
+  height: 65rpx !important;
+}
+page{
+  background-color: #e6e6e6;
+}
+
+.function{
+  background-color: #fff;
+  height: 200rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.function .item{
+  display: flex;
+  height: 110rpx;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.function .item image{
+   width: 60rpx;
+   height: 60rpx;
+}
+.function .item text{
+  font-size: 27rpx;
+  color: gray;
+}
+
+.open{
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  margin-top: 4rpx;
+  padding-bottom: 10rpx;
+}
+.title{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+}
+.title text{
+  font-size: 30rpx;
+  font-weight: 700;
+  margin-left: 10rpx;
+}
+.title .more{
+  color: red;
+  font-size: 25rpx;
+}
+.decorate{
+  color: red;
+  font-weight: 900;
+  font-size: 15px;
+  position: absolute;
+  top: 17rpx;
+  left: 20rpx;
+}
+.open-body{
+  width: 95%;
+  margin: 15rpx auto;
+  background-color: #fff;
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+  padding: 20rpx;
+  box-shadow: 0 5rpx 20rpx 0 #e4e1e1;
+}
+.open-body-item{
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 5rpx 0;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid rgba(185, 185, 183, 0.2);
+}
+.open-body-item .status{
+  color: red;
+  font-size: 25rpx;
+  margin-right: 40rpx;
+}
+.open-body-item .name{
+  width: 300rpx;
+  font-size: 28rpx;
+}
+.open-body-item .deadline{
+  font-size: 27rpx;
+  color: #aaa6a6;
+}
+.news-body-item{
+  /* border: 1px solid black; */
+  border-bottom: 1px solid rgba(185, 185, 183, 0.2);
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  
+}
+.news-body{
+  width: 95%;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+  box-shadow: 0 5rpx 20rpx 0 #e4e1e1;
+}
+.news-body image{
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 30rpx;
+}
+.news-body-item-decorate text{
+  font-size: 30rpx;
+  font-weight: 700;
+ line-height: 60rpx;
+}
+.news-body-item-decorate{
+  width: 500rpx;
+}
+.news-body-item-time{
+  font-size: 25rpx;
+  color: #aaa6a6;
+  line-height: 60rpx;
+}
+
+.news-body-item-time text{
+  color: red;
+  font-weight: 400;
+  font-size: 25rpx;
+}

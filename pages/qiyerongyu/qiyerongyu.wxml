@@ -1,0 +1,9 @@
+<!--pages/qiyerongyu/qiyerongyu.wxml-->
+ <!-- 企业荣誉 -->
+ <view>
+     <view class="box" wx:for="{{honor}}" wx:key="index">
+       <image src="{{item.savePath}}"></image>
+       <text>{{item.description}}</text>
+     </view>
+  </view>
+  <!-- 企业荣誉 -->

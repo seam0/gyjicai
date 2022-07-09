@@ -1,0 +1,74 @@
+/* pages/myPrice/myPrice.wxss */
+.title{
+  display: flex;
+}
+.title view{
+  font-size: 28rpx;
+  font-weight: 700;
+  width: 25%;
+  text-align: center;
+  border-bottom: 2px solid rgb(219, 213, 213);
+  height: 70rpx;
+  line-height: 60rpx;
+}
+.title view:first-child{
+  width: 20%;
+}
+.title view:last-child{
+  width:30%
+}
+
+.item{
+  display: flex;
+  border-bottom: 1px solid rgba(151, 150, 150, 0.158);
+  border-top: 1px solid rgba(151, 150, 150, 0.158);
+  font-size: 27rpx;
+}
+.item view{
+  width: 25%;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.item view:first-child{
+  width: 20%;
+}
+.item view:last-child{
+  width: 30%;
+}
+.status{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.status i{
+  display: block;
+  width: 15rpx;
+  height: 15rpx;
+  background-color: rgb(19, 238, 37);
+  border-radius: 50%;
+}
+.status text{
+  color: rgb(19, 238, 37);
+}
+.operation{
+  display: flex;
+  align-items: center;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+}
+.operation button{
+  width: 95rpx;
+  height: 45rpx;
+  font-size: 20rpx;
+  padding: 0;
+  color: #fff;
+  border: 0;
+  margin-right: 5rpx;
+}
+.contract{
+ background-color: rgb(3, 158, 248);
+}
+.details{
+  background-color: #f14d0c;
+}

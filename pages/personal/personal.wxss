@@ -1,0 +1,47 @@
+/* pages/personal/personal.wxss */
+page{
+  background-color: #f7f8fa;
+}
+.box{
+  padding: 0 30rpx;
+  background-color: #fff;
+}
+.item{
+  font-size: 30rpx;
+  border-bottom: 1px solid rgb(226, 225, 225);
+  display: flex;
+  justify-content: space-between;
+  height: 110rpx;
+  align-items: center;
+  padding: 0 10rpx;
+}
+.item i{
+  font-size: 25rpx;
+}
+.item:last-child{
+  border-bottom: none;
+}
+.item .right{
+  /* font-weight: 700; */
+  display: flex;
+  align-items: center;
+}
+
+.exit{
+  height: 90rpx;
+  margin-top: 25rpx;
+  background-color: #fff;
+  text-align: center;
+  line-height: 90rpx;
+  color: red;
+}
+
+.touxiang .right image{
+  width: 90rpx;
+  height: 90rpx;
+  border: 1px solid rgb(228, 227, 227);
+  border-radius: 50%;
+}
+.iconfont{
+  font-size: 30rpx !important;
+}

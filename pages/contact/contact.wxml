@@ -1,0 +1,44 @@
+<!--pages/contact/contact.wxml-->
+<view class="contact">
+  <view class="title">
+  <i class="iconfont icon-address"></i>
+  联系地址
+  </view>
+  <map class="ditu" name="ditu" style="width: 95%;height: 400rpx;"   longitude="102.85259398064278" latitude="24.928924199423606" scale="17" markers="{{maker}}">
+  </map>
+
+  <view class="title">
+  <i class="iconfont icon-lianxidianhua1"></i>
+  联系电话
+  </view>
+  <van-collapse value="{{ activeNames }}" bind:change="onChange">
+  <van-collapse-item title="云南钢友第一分公司" name="1">
+    <view class="phoneItem" bindtap="tel" data-tel="{{phone}}" > 
+       <i class="iconfont icon-lianxidianhua"></i>
+       程总：<text>16608747051</text>
+    </view>
+    <view class="phoneItem" bindtap="tel" data-tel="{{phone}}" >
+      <i class="iconfont icon-lianxidianhua"></i>
+       程总：<text>16608747051</text>
+    </view>
+    <view class="phoneItem" bindtap="tel" data-tel="{{phone}}" >
+      <i class="iconfont icon-lianxidianhua"></i>
+       程总：<text>16608747051</text>
+    </view>
+  </van-collapse-item>
+  <van-collapse-item title="云南钢友第一分公司" name="2">
+    <view class="phoneItem" bindtap="tel" data-tel="{{phone}}" > 
+       <i class="iconfont icon-lianxidianhua"></i>
+       程总：<text>16608747051</text>
+    </view>
+    <view class="phoneItem" bindtap="tel" data-tel="{{phone}}" >
+      <i class="iconfont icon-lianxidianhua"></i>
+       程总：<text>16608747051</text>
+    </view>
+    <view class="phoneItem" bindtap="tel" data-tel="{{phone}}" >
+      <i class="iconfont icon-lianxidianhua"></i>
+       程总：<text>16608747051</text>
+    </view>
+  </van-collapse-item>
+</van-collapse>
+</view>

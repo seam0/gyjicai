@@ -1,0 +1,157 @@
+<!--pages/ProjectDetail/ProjectDetail.wxml-->
+<view class="ProjectDetail">
+  <view class="top">
+    <view class="title">钢材一批<text>(20210512)</text></view>
+    <view class="deadline">
+      <text>报价截止时间剩余：</text>
+      <van-count-down time="{{ time }}" format="DD 天 HH 时 mm 分 ss 秒" size="40px" />
+    </view>
+  </view>
+
+  <!-- 每一项 -->
+  <view class="detail-item">
+    <view class="title">
+      <view class="name">
+        钢材
+      </view>
+      <view class="count">
+        数量：<text>20</text>
+      </view>
+    </view>
+    <view class="detail-body">
+      <!-- 左侧 -->
+      <view class="left">
+        <view class="guige"><text>材质：</text>DN256</view>
+        <view class="guige"><text>规格：</text>L90x6</view>
+        <view class="danwei"><text>单位：</text>卷</view>
+        <view class="beizhu"><text>备注：</text>无</view>
+      </view>
+      <!-- 左侧 -->
+
+      <!-- 右侧 -->
+      <view class="right">
+        <view class="jizhong"><text>交货地点：</text>广州</view>
+        <view class="jiaohuoqi"><text>期望交货期：</text>2022-11-22</view>
+        <view class="jizhong"><text>计重方式：</text>磅记</view>
+  
+      </view>
+      <!-- 右侧 -->
+    </view>
+    <!-- 底部用户操作区域 -->
+    <view class="price">
+      <view class="first">
+        <view class="baojia">
+          <text>报价：</text>
+          <input class="input-text" type="text" />
+        </view>
+        <view class="count">
+          <text>数量：</text>
+          <van-stepper />
+        </view>
+      </view>
+
+      <view class="last">
+        <view class="hanshui">
+          <text>是否含税：</text>
+          <van-switch checked="{{ checked }}" bind:change="onChange" size="40rpx" />
+        </view>
+        <view class="zhibao">
+          <text>上传质保书:</text>
+          <van-uploader>
+            <van-button icon="photo" type="primary">
+              <i class="iconfont icon-shangchuanwenjianjia"></i>
+            </van-button>
+          </van-uploader>
+        </view>
+      </view>
+      <view class="beizhu">
+          <text>备注：</text>
+          <input class="ipt-text" type="text" />
+        </view>
+    </view>
+    <!-- 底部用户操作区域 -->
+  </view>
+  <!-- 每一项 -->
+
+<!-- 每一项 -->
+<view class="detail-item">
+    <view class="title">
+      <view class="name">
+        钢材
+      </view>
+      <view class="count">
+        数量：<text>20</text>
+      </view>
+    </view>
+    <view class="detail-body">
+      <!-- 左侧 -->
+      <view class="left">
+        <view class="guige"><text>材质：</text>DN256</view>
+        <view class="guige"><text>规格：</text>L90x6</view>
+        <view class="danwei"><text>单位：</text>卷</view>
+        <view class="beizhu"><text>备注：</text>无</view>
+      </view>
+      <!-- 左侧 -->
+
+      <!-- 右侧 -->
+      <view class="right">
+        <view class="jizhong"><text>交货地点：</text>广州</view>
+        <view class="jiaohuoqi"><text>期望交货期：</text>2022-11-22</view>
+        <view class="jizhong"><text>计重方式：</text>磅记</view>
+  
+      </view>
+      <!-- 右侧 -->
+    </view>
+    <!-- 底部用户操作区域 -->
+    <view class="price">
+      <view class="first">
+        <view class="baojia">
+          <text>报价：</text>
+          <input class="input-text" type="text" />
+        </view>
+        <view class="count">
+          <text>数量：</text>
+          <van-stepper />
+        </view>
+      </view>
+
+      <view class="last">
+        <view class="hanshui">
+          <text>是否含税：</text>
+          <van-switch checked="{{ checked }}" bind:change="onChange" size="40rpx" />
+        </view>
+        <view class="zhibao">
+          <text>上传质保书:</text>
+          <van-uploader>
+            <van-button icon="photo" type="primary">
+              <i class="iconfont icon-shangchuanwenjianjia"></i>
+            </van-button>
+          </van-uploader>
+        </view>
+      </view>
+      <view class="beizhu">
+          <text>备注：</text>
+          <input class="ipt-text" type="text" />
+        </view>
+    </view>
+    <!-- 底部用户操作区域 -->
+  </view>
+  <!-- 每一项 -->
+
+  <!-- 提交报价按钮 -->
+  <view class="submitBtn">
+    <view class="contact">
+      <button class="icon" open-type="contact">
+        <i class="iconfont icon-zixun-tousu"></i>
+      </button>
+      <text>咨询</text>
+    </view>
+    <view class="myPrice" bindtap="tomyPrice">我的报价</view>
+    <view class="submitPrice" bindtap="submitPrice">提交报价</view>
+  </view>
+  <!-- 提交报价按钮 -->
+
+  <!-- 报价详情弹出层 -->
+  <van-toast id="van-toast" />
+  <!-- 报价详情弹出层 -->
+</view>

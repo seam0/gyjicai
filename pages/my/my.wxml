@@ -1,0 +1,147 @@
+<!--pages/my/my.wxml-->
+<view class="my">
+  <!-- 顶部用户信息盒子 -->
+  <view class="top">
+
+    <!-- 已登录 -->
+    <view class="user-login user" wx:if="{{token}}">
+      <!--  用户信息 -->
+      <view class="user-info">
+        <view class="image">
+          <image src="https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132">
+          </image>
+        </view>
+        <view class="text">
+          <button>daj</button>
+          <text>GY123456</text>
+        </view>
+      </view>
+      <!--  用户信息 -->
+      <!-- 扫码功能 -->
+      <view class="erweima">
+        <i class="iconfont icon-saoma"></i>
+      </view>
+      <!-- 扫码功能 -->
+    </view>
+    <!-- 已登录 -->
+
+    <!-- 未登录 -->
+    <view class="user" wx:else>
+      <!-- 用户头像 -->
+      <view class="user-info">
+        <view class="image">
+          <image src="https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132">
+          </image>
+        </view>
+        <view class="text">
+          <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">注册/登录</button>
+          <text>登录后可享更多服务></text>
+        </view>
+      </view>
+    </view>
+    <!-- 未登录 -->
+  </view>
+  <!-- 顶部用户信息盒子 -->
+
+  <!-- 功能列表 -->
+  <view class="functionList">
+    <view class="one functionBox">
+      <view class="functionItem" bindtap="toPersonal">
+        <view class="box-contant">
+          <view class="icon-title">
+            <i class="iconfont icon-zhanghaoguanli"></i>
+            <text>账号管理</text>
+          </view>
+          <i class="iconfont icon-youjiantou"></i>
+        </view>
+      </view>
+
+      <view class="functionItem" bindtap="tomyPrice">
+        <view class="box-contant">
+          <view class="icon-title">
+            <i class="iconfont icon-baojiashenhe"></i>
+            <text>我的报价</text>
+          </view>
+          <i class="iconfont icon-youjiantou"></i>
+        </view>
+      </view>
+
+      <view class="functionItem" bindtap="toQiyeguanli">
+        <view class="box-contant">
+          <view class="icon-title">
+            <i class="iconfont icon-qiyeguanli"></i>
+            <text>企业管理</text>
+          </view>
+          <i class="iconfont icon-youjiantou"></i>
+        </view>
+      </view>
+    </view>
+
+    <view class="two functionBox">
+      <view class="functionItem" bindtap="toQiyerongyu">
+        <view class="box-contant">
+          <view class="icon-title">
+            <i class="iconfont icon-a-ziyuan593"></i>
+            <text>企业荣誉</text>
+          </view>
+          <i class="iconfont icon-youjiantou"></i>
+        </view>
+      </view>
+
+
+      <view class="functionItem" bindtap="toAbout">
+        <view class="box-contant">
+          <view class="icon-title">
+            <i class="iconfont icon-guanyuwomen"></i>
+            <text>关于我们</text>
+          </view>
+          <i class="iconfont icon-youjiantou"></i>
+        </view>
+      </view>
+
+      <view class="functionItem" bindtap="toContact">
+        <view class="box-contant">
+          <view class="icon-title">
+            <i class="iconfont icon-lianxiwomen1"></i>
+            <text>联系我们</text>
+          </view>
+          <i class="iconfont icon-youjiantou"></i>
+        </view>
+      </view>
+
+      <view class="functionItem" bindtap="toHelp">
+        <view class="box-contant">
+          <view class="icon-title">
+            <i class="iconfont icon-help"></i>
+            <text>帮助</text>
+          </view>
+          <i class="iconfont icon-youjiantou"></i>
+        </view>
+      </view>
+
+    </view>
+
+    <view class="three functionBox">
+      <view class="functionItem">
+        <view class="box-contant">
+          <view class="icon-title">
+            <i class="iconfont icon-wodelianxikefu"></i>
+            <text>联系客服</text>
+          </view>
+          <i class="iconfont icon-youjiantou"></i>
+        </view>
+      </view>
+
+      <view class="functionItem">
+        <view class="box-contant">
+          <view class="icon-title">
+            <i class="iconfont icon-jianyi"></i>
+            <text>投诉建议</text>
+          </view>
+          <i class="iconfont icon-youjiantou"></i>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 功能列表 -->
+</view>

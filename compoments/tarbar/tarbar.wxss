@@ -1,0 +1,27 @@
+/* compoments/tarbar/tarbar.wxss */
+.tabbar{
+  width: 100%;
+  height: 100rpx;
+  border: 1px solid red;
+  box-sizing: border-box;
+  background-color: #fff;
+  display: flex;
+}
+.tarbar-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  border: 1px solid pink;
+}
+.tarbar-item text{
+  font-size: 28rpx;
+}
+image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.tarbar-home{
+  color: #fd9380;
+}

@@ -1,0 +1,212 @@
+/* pages/ProjectDetail/ProjectDetail.wxss */
+page{
+ background-color: #fff;
+}
+text{
+  font-weight: 700;
+}
+.top{
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 30rpx;
+  box-shadow: 0 5rpx 20rpx 0 #e4e1e1;
+  margin-bottom: 30rpx;
+}
+.ProjectDetail{
+  margin-bottom: 120rpx;
+  padding: 20rpx;
+  position: relative;
+}
+.top .left{
+  height: 90rpx;
+  background-color: #fff;
+}
+.top  .title{
+  font-weight: 700;
+  margin-bottom: 20rpx;
+}
+.top  .title text{
+  color: gray;
+  font-size: 27rpx;
+}
+.deadline{
+  display: flex;
+  align-items: center;
+}
+.deadline text{
+  font-size: 29rpx;
+  font-weight: 400;
+  color: gray;
+}
+.icon-shangchuanwenjianjia{
+  color: #42a5f5;
+  font-size: 60rpx;
+}
+.zhibao{
+  display: flex;
+  width: 330rpx;
+  height: 50rpx;
+  align-items: center;
+}
+.van-count-down{
+  font-size: 35rpx !important;
+  color: red !important;
+}
+.detail-item{
+  box-shadow: 0 5rpx 20rpx 0 #e4e1e1;
+  width: 100%;
+  height: 470rpx;
+  /* border: 1px solid pink; */
+  border-radius: 10rpx;
+  margin-top: 10rpx;
+}
+.detail-item .title{
+   display: flex;
+   justify-content: space-between;
+   height: 80rpx;
+   align-items: center;
+   background-color: #fff;
+   padding: 0 20rpx;
+   font-size: 27rpx;
+   line-height: 60rpx;
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: 700;
+   border-bottom: 1px dotted gray;
+}
+
+.detail-body{
+  border-bottom: 1px dotted gray;
+  height: 160rpx;
+  background-color:#fff;
+  display: flex;
+  padding: 10rpx 0;
+}
+.detail-body .left{
+  /* border: 1px solid black; */
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 20rpx;
+  font-size: 27rpx;
+}
+.detail-body .right{
+  height: 80%;
+  width: 50%;
+  font-size: 27rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.hanshui{
+  display: flex;
+}
+.input-text{
+  border: 1px solid gray !important;
+  display: inline-block;
+  width: 100rpx;
+  border-radius: 10rpx;
+}
+.ipt-text{
+  border: 1px solid gray !important;
+  display: inline-block;
+  width: 550rpx;
+  border-radius: 10rpx;
+}
+.first{
+  display: flex;
+  margin-bottom: 10rpx;
+  justify-content: space-between;
+}
+.price{
+  padding: 10rpx 20rpx;
+}
+.price text{
+  font-size: 27rpx;
+}
+.baojia{
+  display: flex;
+  align-items: center;
+}
+.count{
+  display: flex;
+  align-items: center;
+  margin-right: 60rpx;
+}
+.hanshui{
+  display: flex;
+  align-items: center;
+}
+.beizhu{
+  display: flex;
+  align-items: center;
+}
+.last{
+  display: flex;
+  justify-content: space-between;
+  margin: 10rpx 0;
+}
+.submitBtn{
+  padding: 20rpx 0;
+  display: flex;
+  width: 100%;
+  height: 80rpx;
+  border-top:1px solid rgb(236, 236, 236) ;
+  background-color: rgb(255, 255, 255);
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
+.submitBtn i {
+  font-size: 50rpx;
+  color: gray;
+}
+
+.icon::after{
+  border: none;
+}
+.icon{
+  display: block;
+  background-color: transparent;
+  width: 100rpx;
+  height: 60rpx;
+  /* border: 1px solid red; */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact{
+  width: 100rpx;
+  height: 90rpx;
+  /* border: 1px solid pink; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10rpx;
+}
+
+.submitBtn text{
+  color: black;
+  font-size: 25rpx;
+}
+.myPrice{
+  width: 40%;
+  height: 80rpx;
+  background-color: #ffca28;
+  border-radius:40rpx 0 0 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+.submitPrice{
+  width: 40%;
+  height: 80rpx;
+  background-color: red;
+  border-radius:0 40rpx 40rpx 0;
+  text-align: center;
+  line-height: 80rpx;
+}

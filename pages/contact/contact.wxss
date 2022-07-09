@@ -1,0 +1,39 @@
+/* pages/contact/contact.wxss */
+.contact{
+  padding: 20rpx;
+}
+page{
+  background-color: #fff;
+}
+.title{
+  font-size: 30rpx;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 30rpx;
+}
+.ditu{
+  margin: 0 auto;
+  margin-bottom: 20rpx; 
+  box-shadow: 0 5rpx 20rpx 0 #e4e1e1;
+}
+.phoneItem{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 27rpx;
+  color: #ffca28;
+  border-bottom: 1px solid rgb(238, 238, 238);
+}
+.phoneItem text{
+  font-size: 32rpx;
+  color: red;
+}
+.van-collapse-item__content{
+  padding: 0 30rpx !important;
+}
+
+.van-collapse{
+  box-shadow: 0 5rpx 20rpx 0 #e4e1e1;
+  width: 95%;
+  margin: 0 auto;
+}

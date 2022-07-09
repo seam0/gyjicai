@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+    "van-tabbar": "@vant/weapp/tabbar/index"
+  },
+  "navigationBarTitleText": "云南钢友集采平台",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff"
+}

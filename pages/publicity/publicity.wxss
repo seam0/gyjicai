@@ -1,0 +1,44 @@
+/* pages/publicity/publicity.wxss */
+page{
+  background-color: #f7f8fa;
+}
+
+.publicity{
+  padding: 20rpx;
+}
+.publicity-item{
+  margin-bottom: 25rpx;
+  position: relative;
+  width: 100%;
+  height: 180rpx;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 5rpx 20rpx 0 #e4e1e1;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  font-size: 27rpx;
+  font-weight: 700;
+}
+
+.publicity-item view text{
+  font-weight: 400;
+}
+.publicity-item view{
+  margin-right: 50rpx;
+}
+.publicity-item i{
+  font-size: 100rpx;
+  font-weight: 100;
+  color: #fd664b;
+   position: absolute;
+   right: 20rpx;
+   bottom: 15rpx;
+   z-index: 999;
+}
+.chengjiao text{
+  font-size: 29rpx;
+  color: red;
+}
+

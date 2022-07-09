@@ -1,0 +1,10 @@
+<!--pages/about/about.wxml-->
+  <!-- 关于我们 -->
+  <view>
+    <view class="text">
+      <rich-text nodes="{{aboutText.content}}"></rich-text>
+      <image src="{{aboutText.coverImage}}"></image>
+    </view>
+  </view>
+   <!-- 关于我们 -->
+

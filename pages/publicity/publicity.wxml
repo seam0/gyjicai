@@ -1,0 +1,38 @@
+<!--pages/publicity/publicity.wxml-->
+<!-- 搜索区域 -->
+<van-search value="{{ value }}" placeholder="请输入搜索关键词" shape="round" background="#fd664b" />
+<!-- 搜索区域 -->
+
+<!-- 项目公示 -->
+<view class="publicity">
+    <!-- 每一项 -->
+   <view class="publicity-item" wx:for="{{publicityList}}" wx:key="item.detailId">
+    <!-- 已完成图标 -->
+     <i class="iconfont icon-yiwancheng"></i>
+    <!-- 已完成图标 -->
+     <view class="id">
+       项目编号：<text>{{item.pro_plan_num}}</text>
+     </view>
+     <view class="name">
+       项目名称：<text>{{item.pro_plan_title}}</text>
+     </view>
+     <view class="product-name">
+       品名：<text>{{item.product_name}}</text>
+     </view>
+     <view class="caizhi">
+      材质：<text>{{item.textofmate}}</text>
+     </view>
+     <view class="guige">
+       规格：<text>{{item.specification}}</text>
+     </view>
+     <view class="biaozhun">
+       执行标准：<text>{{item.exeStand}}</text>
+     </view>
+     <view class="chengjiao">
+       成交价格：<text>{{item.price}}</text>
+     </view>
+   </view>
+   <!-- 每一项 -->
+
+</view>
+<!-- 项目公示 -->
