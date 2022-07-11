@@ -4,7 +4,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    token: '' //存储用户token
+    show: false, // 展示遮罩层
+    token: '', //存储用户token
+    userInfo: {}
   },
 
   // 跳转页面--------------------------------------------------------------
@@ -75,10 +77,6 @@ Page({
     wx.login({
       success: (res) => {
         if (res.code) {
-          // 显示登录加载中
-          wx.showLoading({
-            title: '登录中'
-          })
           //发起网络请求，换取openid
           wx.request({
             method: 'POST',
@@ -90,13 +88,17 @@ Page({
               code: res.code
             },
             success: (res) => {
-              console.log(res)
               const openId = res.data.openId
               //将openid和sessionkey存入本地缓存
               wx.setStorageSync('openId', res.data.openId)
               // 通过userId来判断用户是否注册过
+              console.log(res)
               if (res.data.userId) {
                 // 有userId, 说明用户已经注册过,直接发送登录请求
+                // 显示登录加载中
+                wx.showLoading({
+                  title: '登录中'
+                })
                 // 发送登录请求
                 wx.request({
                   url: 'https://api.yngy.cloud/wechat/ma/wxa9b14525f3c10f15/login/' + openId,
@@ -105,18 +107,38 @@ Page({
                     'content-type': 'application/x-www-form-urlencoded' // 修改请求
                   },
                   success: (res) => {
+                    // 请求后台获取用户信息回写
+                    wx.request({
+                      url: 'https://api.yngy.cloud/account/user/getInfo',
+                      header: {
+                        "content-type": 'application/x-www-form-urlencoded',
+                        "authorization": "Bearer" + " " + res.data.access_token
+                      },
+                      success: (res) => {
+                        // 将用户信息存入本地
+                        let userInfo = {}
+                        userInfo.nickName = res.data.users.nickName
+                        userInfo.userName = res.data.users.userName
+                        userInfo.sex = res.data.users.sex
+                        userInfo.avatar = res.data.users.avatar
+                        userInfo.phone = res.data.users.phone
+                        wx.setStorageSync('userInfo', userInfo)
+                        this.setData({
+                          userInfo: userInfo
+                        })
+                        // 关闭登录中弹窗
+                        wx.hideLoading()
+                        // 提示用户登录成功
+                        wx.showToast({
+                          title: '登录成功'
+                        })
+                      }
+                    })
                     // 发送登录请求成功后，将返回的access_token存储到本地
                     this.setData({
                       token: res.data.access_token
                     })
                     wx.setStorageSync('token', res.data.access_token)
-                    // 请求后台获取用户信息回写
-                    // 关闭登录中弹窗
-                    wx.hideLoading()
-                    // 提示用户登录成功
-                    wx.showToast({
-                      title: '登录成功'
-                    })
                   },
                   fail(res) {
                     // 登录失败
@@ -128,14 +150,9 @@ Page({
               } else {
                 // 用户未注册，提示用户点击登录注册
                 // 关闭登录中弹窗
-                wx.hideLoading({
-                  success: (res) => {
-                    wx.showModal({
-                      showCancel: false,
-                      content: '首次登录请点击上方注册/登录按钮进行登录',
-                      confirmColor: '#e2292f'
-                    })
-                  },
+                wx.hideLoading()
+                this.setData({
+                  show: true
                 })
               }
             }
@@ -143,6 +160,9 @@ Page({
         } else {
           console.log('登录失败！' + res.errMsg)
         }
+      },
+      fail: () => {
+        console.log('登录失败！' + res.errMsg)
       }
     })
   },
@@ -150,6 +170,9 @@ Page({
   // 登录功能-用户未注册过
   getPhoneNumber(e) {
     if (e.detail.errMsg == 'getPhoneNumber:ok') {
+      this.setData({
+        show: false
+      })
       wx.showLoading({
         title: '登录中',
       })
@@ -196,15 +219,37 @@ Page({
                         phone: res.data.data.phoneNumber
                       },
                       success: (res) => {
+                        // 请求后台获取用户信息回写
+                        wx.request({
+                          url: 'https://api.yngy.cloud/account/user/getInfo',
+                          header: {
+                            "content-type": 'application/x-www-form-urlencoded',
+                            "authorization": "Bearer" + " " + res.data.access_token
+                          },
+                          success: (res) => {
+                            console.log(res, '用户信息')
+                            // 将用户信息存入本地
+                            let userInfo = {}
+                            userInfo.nickName = res.data.users.nickName
+                            userInfo.userName = res.data.users.userName
+                            userInfo.sex = res.data.users.sex
+                            userInfo.avatar = res.data.users.avatar
+                            userInfo.phone = res.data.users.phone
+                            wx.setStorageSync('userInfo', userInfo)
+                            this.setData({
+                              userInfo: userInfo
+                            })
+                            wx.hideLoading()
+                            wx.showToast({
+                              title: '登录成功！',
+                            })
+                          }
+                        })
                         // 将access_token存储到本地
                         this.setData({
                           token: res.data.access_token
                         })
                         wx.setStorageSync('token', res.data.access_token)
-                        wx.hideLoading()
-                        wx.showToast({
-                          title: '登录成功！',
-                        })
                       },
                       fail() {
                         console.log('登录失败')
@@ -217,7 +262,14 @@ Page({
           }
         }
       })
+    } else {
+      console.log('拒绝')
     }
+  },
+  cancel() {
+    this.setData({
+      show: false
+    })
   },
 
   /**
@@ -226,9 +278,11 @@ Page({
   onLoad(options) {
     // 页面一加载时从本地获取token存入data中
     let token = wx.getStorageSync('token')
+    let userInfo = wx.getStorageSync('userInfo')
     if (token) {
       this.setData({
-        token: token
+        token: token,
+        userInfo: userInfo
       })
     }
     return

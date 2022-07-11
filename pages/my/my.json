@@ -4,6 +4,6 @@
   "navigationBarTextStyle":"white",
   "navigationBarBackgroundColor": "#e2292f",
   "usingComponents": {
-  
+    "van-overlay": "@vant/weapp/overlay/index"
   }
 }

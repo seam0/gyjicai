@@ -8,12 +8,12 @@
       <!--  用户信息 -->
       <view class="user-info">
         <view class="image">
-          <image src="https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132">
+          <image mode="aspectFill" src="{{userInfo.avatar || 'https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132'}}">
           </image>
         </view>
         <view class="text">
-          <button>daj</button>
-          <text>GY123456</text>
+          <button>{{userInfo.nickName}}</button>
+          <text>{{userInfo.userName}}</text>
         </view>
       </view>
       <!--  用户信息 -->
@@ -44,13 +44,13 @@
   <!-- 顶部用户信息盒子 -->
 
   <!-- 功能列表 -->
-  <view class="functionList">
-    <view class="one functionBox">
+  <view class="functionList" >
+    <view class="one functionBox" wx:if="{{token}}">
       <view class="functionItem" bindtap="toPersonal">
         <view class="box-contant">
           <view class="icon-title">
             <i class="iconfont icon-zhanghaoguanli"></i>
-            <text>账号管理</text>
+            <text>账户管理</text>
           </view>
           <i class="iconfont icon-youjiantou"></i>
         </view>
@@ -123,25 +123,36 @@
 
     <view class="three functionBox">
       <view class="functionItem">
-        <view class="box-contant">
+        <button class="box-contant btn" open-type="contact">
           <view class="icon-title">
             <i class="iconfont icon-wodelianxikefu"></i>
             <text>联系客服</text>
           </view>
           <i class="iconfont icon-youjiantou"></i>
-        </view>
+        </button>
       </view>
 
       <view class="functionItem">
-        <view class="box-contant">
+        <button class="box-contant btn" open-type="feedback">
           <view class="icon-title">
             <i class="iconfont icon-jianyi"></i>
             <text>投诉建议</text>
           </view>
           <i class="iconfont icon-youjiantou"></i>
-        </view>
+        </button>
       </view>
     </view>
   </view>
   <!-- 功能列表 -->
+  <!-- 遮罩层 -->
+  <van-overlay show="{{ show }}" bind:click="onClickHide">
+     <view class="tanchuang">
+       <view class="title">欢迎来到云南钢友</view>
+       <view class="text">首次登录，请点击确认按钮，我们将获取您的手机号，用于登录和注册</view>
+       <view class="btn">
+         <button class="cancel" bindtap="cancel">取消</button>
+         <button class="confirm" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">确认</button>
+       </view>
+     </view>
+  </van-overlay>
 </view>

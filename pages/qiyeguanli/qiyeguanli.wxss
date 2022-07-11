@@ -106,3 +106,23 @@ input{
 .table .tr:nth-of-type(odd){
  background-color: #f1f1f1;
 }
+.reason{
+  /* border: 1px solid red; */
+  width: 95%;
+  margin: 10rpx;
+  background-color: rgba(24, 7, 1, 0.1);
+  border-radius: 15rpx;
+  margin: 0 auto;
+  color: rgb(253, 253, 253);
+  padding: 15rpx 0;
+  font-size: 27rpx;
+  display: flex;
+  align-items: center;
+  color: rgb(100, 100, 91);
+}
+.reason text{
+  font-weight: 700;
+}
+.icon-bg-warning{
+  margin: 0 20rpx;
+}

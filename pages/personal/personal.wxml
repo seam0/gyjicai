@@ -7,18 +7,25 @@
       <i class="iconfont icon-youjiantou"></i>
     </view>
   </view>
-  <view class="item">
+  <view class="item" bindtap="nickName">
     <view class="left">昵称</view>
-    <view class="right">{{userInfo.nickName}}<i class="iconfont icon-youjiantou"></i></view>
+    <view class="right">
+    <text>{{userInfo.nickName}}</text>
+    <i class="iconfont icon-youjiantou"></i>
+    </view>
   </view>
   <view class="item">
     <view class="left">性别</view>
-    <view class="right">{{userInfo.sex==0? '男':'女'}} <i class="iconfont icon-youjiantou"></i></view>
+    <view class="right">
+    <text>{{userInfo.sex==0? '男':'女'}} </text>
+    <i class="iconfont icon-youjiantou"></i>
+    </view>
   </view>
   
   <view class="item">
     <view class="left">绑定手机号</view>
-    <view class="right">{{userInfo.phone}}</view>
+    <view class="right">
+    <text>{{userInfo.phone}}</text>
+    </view>
   </view>
 </view>
-<view class="exit" bindtap="exit">供应商注册</view>

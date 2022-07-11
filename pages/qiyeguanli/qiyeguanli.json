@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "van-steps": "@vant/weapp/steps/index"
+  },
   "navigationBarTitleText": "企业管理"
 }
