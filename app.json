@@ -35,6 +35,7 @@
     }]
   },
   "usingComponents": {
+    "van-notify": "@vant/weapp/notify/index",
     "van-popup": "@vant/weapp/popup/index",
      "van-action-sheet": "@vant/weapp/action-sheet/index",
      "van-overlay": "@vant/weapp/overlay/index",

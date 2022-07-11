@@ -1,10 +1,21 @@
 // pages/personal/personal.js
+import Notify from "../../miniprogram_npm/@vant/weapp/notify/notify"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    // 控制性别选项弹框
+    show: false,
+    // 性别弹出层配置项
+    actions: [{
+        name: '男',
+      },
+      {
+        name: '女',
+      }
+    ],
     userInfo: {}
   },
   toQiyeguanli() {
@@ -12,7 +23,29 @@ Page({
       url: '../qiyeguanli/qiyeguanli',
     })
   },
-  // 更改头像昵称方法
+  // 更改头像方法
+  chooseImage(){
+    wx.chooseMedia({
+      count: 1,
+      mediaType: ['image'],
+      sourceType: ['album', 'camera'],
+      maxDuration: 30,
+      camera: 'back',
+      success:(res)=> {
+        // 获取图片成功后，调用接口上传图片
+        wx.uploadFile({
+          filePath: res.tempFiles[0].tempFilePath,
+          name: 'file',
+          url: 'https://api.yngy.cloud/account/user/profile',
+          header: {
+            "content-type": 'multipart/form-data',
+            "authorization": "Bearer" + " " + this.data.token
+          },
+        })
+      }
+    })
+  },
+  // 更改昵称方法
   nickName() {
     wx.showModal({
       title: '修改昵称',
@@ -46,8 +79,12 @@ Page({
                 wx.showToast({
                   title: '更新成功',
                 })
-              }else{
+              } else {
                 console.log(res.data.msg)
+                Notify({
+                  type: 'danger',
+                  message: res.data.msg
+                });
               }
 
             }
@@ -58,7 +95,54 @@ Page({
       }
     })
   },
+  // 修改性别方法
+  onClose() {
+    this.setData({
+      show: false
+    });
+  },
+  onSelect(event) {
+    console.log(event.detail);
+    let sex = ''
+    if (event.detail.name === '男') {
+      sex = '0'
+    } else {
+      sex = '1'
+    }
+    wx.request({
+      url: 'https://api.yngy.cloud/account/user/profile',
+      method: 'PUT',
+      header: {
+        "content-type": 'application/json',
+        "authorization": "Bearer" + " " + this.data.token
+      },
+      data: {
+        sex: sex
+      },
+      success: (res) => {
+        if (res.data.code === 200) {
+          // 从缓存中取出昵称
+          let userInfo = wx.getStorageSync('userInfo')
+          //将用户输入的值覆盖原来的值
+          userInfo.sex = sex
+          // 更新本地存储的值
+          wx.setStorageSync('userInfo', userInfo)
+          // 更新页面数据
+          this.updateData()
+          // 弹框提示用户更新成功
+          wx.showToast({
+            title: '更新成功',
+          })
+        } 
+      }
+    })
+  },
+  sex() {
+    this.setData({
+      show: true
+    })
 
+  },
   // 更新用户数据
   updateData() {
     // 页面加载时，从缓存中加载用户信息
