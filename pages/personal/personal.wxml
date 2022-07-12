@@ -28,6 +28,7 @@
     <text>{{userInfo.phone}}</text>
     </view>
   </view>
+
   <van-notify id="van-notify" />
   <van-action-sheet
   show="{{ show }}"

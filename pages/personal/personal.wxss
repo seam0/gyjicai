@@ -48,3 +48,15 @@ page{
 .right text{
   font-size: 28rpx;
 }
+.item:last-of-type{
+  position: relative;
+}
+.item .xinhao{
+  position: absolute;
+  width:62rpx;
+  height: 25rpx;
+  font-size: 39rpx;
+  background-color: #fff;
+  right: 73rpx;
+  top: 40rpx;
+}

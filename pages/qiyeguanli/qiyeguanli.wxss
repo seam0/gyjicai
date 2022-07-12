@@ -2,53 +2,69 @@
 .remind{
   color: red;
   font-size: 27rpx;
-  margin: 20rpx;
+  margin: 0 45rpx;
+  margin-top: 30rpx;
+  line-height: 40rpx;
 }
 input{
   border: 1px solid #90a4ae;
-  width: 500rpx;
-  height: 50rpx;
-  border-radius: 15rpx;
+  width: 600rpx;
+  height: 70rpx;
+  border-radius: 5rpx;
+  font-size: 25rpx;
+  padding-left: 20rpx;
 }
-.form-item {
-  display: flex;
-  margin: 40rpx 0;
+.formarea{
+  width: 100%;
+  padding: 0 50rpx;
+  box-sizing: border-box;
 }
 .form-item .title{
-  width: 200rpx;
-  text-align: center;
+  width: 100%;
+  text-align: left;
   font-size: 29rpx;
-  height: 50rpx;
-  line-height: 50rpx;
+  height: 60rpx;
+  line-height: 60rpx;
 }
-.onload{
-  display: block;
-  width: 200rpx;
-  height: 50rpx;
-  text-align: center;
-  font-size: 27rpx;
-  line-height: 50rpx;
+
+.onload::after{
+  border: 0;
 }
 
 .submit{
-  width: 350rpx;
-  height: 80rpx;
-  background-color: red;
+  width: 400rpx;
+  height:80rpx;
+  background-color: #e2292f;
   color: #fff;
   text-align: center;
-  line-height: 80rpx;
+  line-height: 70rpx;
   font-size: 30rpx;
-  border-radius: 20rpx;
+  border-radius: 10rpx;
+  margin: 20rpx auto;
 }
-
+.zhizhao {
+   display: flex;
+   align-items: center;
+}
+.zhizhao .title{
+  width: 150rpx;
+}
+.uplode::after{
+  border: 0;
+}
+.uplode{
+  margin: 20rpx 0;
+  width:450rpx;
+  height: 100rpx;
+  border: 1px dashed rgb(196, 196, 196);
+  background-color: transparent;
+  text-align: center;
+  line-height: 100rpx;
+}
 .shehuiId .title{
-   padding: 0 40rpx;
-   box-sizing: border-box;
-   height: 80rpx;
-}
-.shehuiId{
-  display: flex;
-  align-items: center;
+
+   height: 50rpx;
+   line-height: 50rpx;
 }
 .table{
    width: 100%;
@@ -57,6 +73,10 @@ input{
    border-radius: 20rpx;
    padding: 20rpx;
    box-sizing: border-box;
+}
+.icon-shangchuan1{
+  color: #42a5f5;
+  font-size: 60rpx !important;
 }
 .yirenzheng{
   background-color: #f7f8fa;
@@ -125,4 +145,33 @@ input{
 }
 .icon-bg-warning{
   margin: 0 20rpx;
+}
+
+.shenghezhong{
+  color: gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 450rpx;
+}
+.icon-shenhezhong2{
+  color: #1a73e8;
+  font-size: 150rpx;
+} 
+.status{
+  font-size: 35rpx;
+  color: black;
+  margin: 20rpx 0;
+}
+.text{
+  font-size: 28rpx;
+}
+.title i{
+  color: red;
+  font-size: 20rpx;
+}
+
+.errorMsg{
+  color: red;
+  font-size: 25rpx;
 }
