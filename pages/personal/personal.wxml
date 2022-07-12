@@ -17,7 +17,7 @@
   <view class="item" bindtap="sex">
     <view class="left">性别</view>
     <view class="right">
-    <text>{{userInfo.sex==0? '男':'女'}} </text>
+    <text>{{userInfo.sex==0? '男':userInfo.sex==1? '女':'未知'}} </text>
     <i class="iconfont icon-youjiantou"></i>
     </view>
   </view>

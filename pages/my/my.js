@@ -92,7 +92,6 @@ Page({
               //将openid和sessionkey存入本地缓存
               wx.setStorageSync('openId', res.data.openId)
               // 通过userId来判断用户是否注册过
-              console.log(res)
               if (res.data.userId) {
                 // 有userId, 说明用户已经注册过,直接发送登录请求
                 // 显示登录加载中
@@ -271,21 +270,17 @@ Page({
       show: false
     })
   },
-
+  // 更新数据方法
+  changeData(){
+   let userInfo = wx.getStorageSync('userInfo')
+   this.setData({
+     userInfo:userInfo
+   })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    // 页面一加载时从本地获取token存入data中
-    let token = wx.getStorageSync('token')
-    let userInfo = wx.getStorageSync('userInfo')
-    if (token) {
-      this.setData({
-        token: token,
-        userInfo: userInfo
-      })
-    }
-    return
   },
 
   /**
@@ -313,7 +308,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-
+   
   },
 
   /**

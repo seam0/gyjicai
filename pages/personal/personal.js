@@ -14,6 +14,9 @@ Page({
       },
       {
         name: '女',
+      },
+      {
+        name: '未知'
       }
     ],
     userInfo: {}
@@ -24,23 +27,54 @@ Page({
     })
   },
   // 更改头像方法
-  chooseImage(){
+  chooseImage() {
     wx.chooseMedia({
       count: 1,
       mediaType: ['image'],
       sourceType: ['album', 'camera'],
       maxDuration: 30,
       camera: 'back',
-      success:(res)=> {
+      success: (res) => {
         // 获取图片成功后，调用接口上传图片
         wx.uploadFile({
           filePath: res.tempFiles[0].tempFilePath,
-          name: 'file',
-          url: 'https://api.yngy.cloud/account/user/profile',
+          name: 'avatarfile',
+          url: 'https://api.yngy.cloud/account/user/profile/avatar',
           header: {
-            "content-type": 'multipart/form-data',
+            "content-type": 'application/json',
             "authorization": "Bearer" + " " + this.data.token
           },
+          success: (res) => {
+            const code = JSON.parse(res.data).code
+            console.log(code)
+            if (code === 200) {
+              console
+              // 拿到更新后的头像
+              let newAvatar = JSON.parse(res.data).imgUrl
+              // 将拿到的新头像放入缓存中
+              let userInfo = wx.getStorageSync('userInfo')
+              userInfo.avatar = newAvatar
+              wx.setStorageSync('userInfo', userInfo)
+              // 更新数据
+              this.updateData()
+              // 修改我的页面数据
+              this.changeParentData()
+              // 弹框提示用户更新成功
+              wx.showToast({
+                title: '更新成功',
+              })
+            } else {
+              Notify({
+                type: 'danger',
+                message: '图片格式错误！'
+              });
+            }
+          },
+          fail: (res) => {
+            wx.showToast({
+              title: '网络错误',
+            })
+          }
         })
       }
     })
@@ -54,43 +88,51 @@ Page({
       confirmColor: '#e2292f',
       success: (res) => {
         let newCount = res.content
-        if (res.confirm) {
-          wx.request({
-            url: 'https://api.yngy.cloud/account/user/profile',
-            method: 'PUT',
-            header: {
-              "content-type": 'application/json',
-              "authorization": "Bearer" + " " + this.data.token
-            },
-            data: {
-              nickName: newCount
-            },
-            success: (res) => {
-              if (res.data.code === 200) {
-                // 从缓存中取出昵称
-                let userInfo = wx.getStorageSync('userInfo')
-                //将用户输入的值覆盖原来的值
-                userInfo.nickName = newCount
-                // 更新本地存储的值
-                wx.setStorageSync('userInfo', userInfo)
-                // 更新页面数据
-                this.updateData()
-                // 弹框提示用户更新成功
-                wx.showToast({
-                  title: '更新成功',
-                })
-              } else {
-                console.log(res.data.msg)
-                Notify({
-                  type: 'danger',
-                  message: res.data.msg
-                });
-              }
+        let str = newCount.trim()
+        if (str == '') {
+          Notify({
+            type: 'danger',
+            message: '输入的字符不能为空'
+          });
+          return
+        } else {
+          if (res.confirm) {
+            wx.request({
+              url: 'https://api.yngy.cloud/account/user/profile',
+              method: 'PUT',
+              header: {
+                "content-type": 'application/json',
+                "authorization": "Bearer" + " " + this.data.token
+              },
+              data: {
+                nickName: newCount
+              },
+              success: (res) => {
+                if (res.data.code === 200) {
+                  // 从缓存中取出昵称
+                  let userInfo = wx.getStorageSync('userInfo')
+                  //将用户输入的值覆盖原来的值
+                  userInfo.nickName = newCount
+                  // 更新本地存储的值
+                  wx.setStorageSync('userInfo', userInfo)
+                  // 更新页面数据
+                  this.updateData()
+                  // 弹框提示用户更新成功
+                  // 修改我的页面数据
+                  this.changeParentData()
+                  wx.showToast({
+                    title: '更新成功',
+                  })
+                } else {
+                  Notify({
+                    type: 'danger',
+                    message: res.data.msg
+                  });
+                }
 
-            }
-          })
-        } else if (res.cancel) {
-          console.log('用户点击取消')
+              }
+            })
+          }
         }
       }
     })
@@ -102,12 +144,13 @@ Page({
     });
   },
   onSelect(event) {
-    console.log(event.detail);
     let sex = ''
     if (event.detail.name === '男') {
       sex = '0'
-    } else {
+    } else if (event.detail.name === '女') {
       sex = '1'
+    } else {
+      sex = '2'
     }
     wx.request({
       url: 'https://api.yngy.cloud/account/user/profile',
@@ -129,11 +172,13 @@ Page({
           wx.setStorageSync('userInfo', userInfo)
           // 更新页面数据
           this.updateData()
+          // 修改我的页面数据
+          this.changeParentData()
           // 弹框提示用户更新成功
           wx.showToast({
             title: '更新成功',
           })
-        } 
+        }
       }
     })
   },
@@ -152,6 +197,13 @@ Page({
       userInfo: userInfo,
       token: token
     })
+  },
+  changeParentData: () => {
+    var pages = getCurrentPages()
+    if (pages.length > 1) {
+      var beforePage = pages[pages.length - 2]
+      beforePage.changeData()
+    }
   },
   /**
    * 生命周期函数--监听页面加载
