@@ -1,6 +1,6 @@
 <!--pages/qiyeguanli/qiyeguanli.wxml-->
 <!-- 未提交审核 -->
-<view class="weirenzheng" wx:if="{{show === 0}}">
+<view class="weirenzheng" wx:if="{{status === 'no'}}">
   <!-- 提示语句 -->
   <view class="remind">请填写完整下方信息，点击提交审核按钮完成认证<view>注意：带*的为必填项</view>
   </view>
@@ -12,19 +12,37 @@
         <view class="title">
           <i class="iconfont icon-required"></i>企业名称:
         </view>
-        <input placeholder="请输入企业名称" type="text" name="enterpriseName" vaule="{{enterpriseName}}" />
+        <input 
+        always-embed="true"
+        placeholder="请输入企业名称" 
+        type="text" 
+        name="enterpriseName" 
+        vaule="{{enterpriseName}}" />
         <view class="errorMsg" wx:if="{{error['enterpriseName'].param == 'enterpriseName'}}">{{error['enterpriseName'].msg}}</view>
       </view>
 
       <view class="shehuiId form-item">
         <view class="title"><i class="iconfont icon-required"></i>企业信用代码:</view>
-        <input placeholder="请输入企业信用代码" type="text" name="orgCode" value="{{orgCode}}" />
+        <input 
+        always-embed="true"
+        maxlength="18" 
+        placeholder="请输入企业信用代码" 
+        type="text" 
+        name="orgCode" 
+        value="{{orgCode}}" 
+        />
         <view class="errorMsg"  wx:if="{{error['orgCode'].param == 'orgCode'}}">{{error['orgCode'].msg}}</view>
       </view>
 
       <view class="lianxiren form-item">
         <view class="title"><i class="iconfont icon-required"></i>联系人:</view>
-        <input placeholder="请输入联系人" type="text" name="contactName" value="{{contactName}}" />
+        <input  
+        always-embed="true"
+         placeholder="请输入联系人"
+          type="text"
+           name="contactName" 
+           value="{{contactName}}"
+            />
         <view class="errorMsg" wx:if="{{error['contactName'].param == 'contactName'}}">
           {{error['contactName'].msg}}
         </view>
@@ -32,24 +50,42 @@
 
       <view class="tel form-item">
         <view class="title"><i class="iconfont icon-required"></i>联系电话:</view>
-        <input placeholder="请输入联系电话" type="text" name="contactPhone" value="{{contactPhone}}" />
+        <input 
+        always-embed="true"
+        maxlength="11" 
+        placeholder="请输入联系电话" 
+        type="text" 
+        name="contactPhone" 
+        value="{{contactPhone}}" 
+        />
         <view class="errorMsg" wx:if="{{error['contactPhone'].param == 'contactPhone'}}">{{error['contactPhone'].msg}}</view>
       </view>
 
       <view class="faren form-item">
         <view class="title">法人:</view>
-        <input placeholder="请输入法人" type="text"  name="legalPersonName" value="{{legalPersonName}}" />
+        <input 
+        always-embed="true"
+        placeholder="请输入法人" 
+        type="text" 
+         name="legalPersonName" 
+         value="{{legalPersonName}}" />
       </view>
 
       <view class="url form-item">
         <view class="title"><i class="iconfont icon-required"></i>企业地址:</view>
-        <input placeholder="请输入企业地址" type="text" name="enterpriseAddress" value="{{enterpriseAddress}}" />
+        <input 
+        always-embed="true"
+        placeholder="请输入企业地址" 
+        type="text" 
+        name="enterpriseAddress" 
+        value="{{enterpriseAddress}}" 
+        />
         <view class="errorMsg" wx:if="{{error['enterpriseAddress'].param == 'enterpriseAddress'}}">{{error['enterpriseAddress'].msg}}</view>
       </view>
 
       <view class="zhizhao form-item">
         <view class="title">营业执照:</view>
-        <button class="uplode">
+        <button class="uplode" bindtap="uplodeImage">
           <i class="iconfont icon-shangchuan1"></i>
         </button>
       </view>
@@ -60,52 +96,54 @@
     </view>
   </form>
   <!-- 表单 -->
+  <van-notify id="van-notify" />
 </view>
 <!-- 未提交审核 -->
 
 <!-- 审核中 -->
-<view class="shenghezhong" wx:elif="{{show === 1}}">
+<view class="shenghezhong" wx:elif="{{status === 'approve'}}">
   <i class="iconfont icon-shenhezhong2"></i>
-  <view class="status">审核中...</view>
+  <view class="status"> 资料审核中...</view>
+  <button bindtap="cancelSubmit">撤销提交</button>
 </view>
 <!-- 审核中 -->
 
 <!-- 审核完成 -->
-<view class="yirenzheng" wx:else>
+<view class="yirenzheng" wx:else >
   <view class="table">
     <text>企业资料</text>
     <view class="tr">
       <view class="td">企业名称</view>
-      <view class="td-last">云南钢友</view>
+      <view class="td-last">{{enterpriseName}}</view>
     </view>
     <view class="tr">
       <view class="td">企业编号</view>
-      <view class="td-last">123456789</view>
+      <view class="td-last">{{enterpriseId}}</view>
     </view>
     <view class="tr">
       <view class="td">企业社会统一代码</view>
-      <view class="td-last">987654321QBG</view>
+      <view class="td-last">{{orgCode}}</view>
     </view>
     <view class="tr">
       <view class="td">法人</view>
-      <view class="td-last">张三</view>
+      <view class="td-last">{{legalPersonName}}</view>
     </view>
     <view class="tr">
       <view class="td">联系人</view>
-      <view class="td-last">张三</view>
+      <view class="td-last">{{contactName}}</view>
     </view>
     <view class="tr">
       <view class="td">联系电话</view>
-      <view class="td-last">16608747051</view>
+      <view class="td-last">{{contactPhone}}</view>
     </view>
     <view class="tr">
       <view class="td">企业地址</view>
-      <view class="td-last">云南省昆明市官渡区黎阳多看几个客户端口号</view>
+      <view class="td-last">{{enterpriseAddress}}</view>
     </view>
     <view class="tr">
       <view class="td">营业执照</view>
       <view class="td-last">
-        <image src="../../images/home/news1.png"></image>
+        <image src="{{businessLicensePicture}}"></image>
       </view>
     </view>
   </view>

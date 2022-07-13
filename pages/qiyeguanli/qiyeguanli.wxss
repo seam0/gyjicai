@@ -1,10 +1,10 @@
 /* pages/qiyeguanli/qiyeguanli.wxss */
 .remind{
   color: red;
-  font-size: 27rpx;
+  font-size: 30rpx;
   margin: 0 45rpx;
   margin-top: 30rpx;
-  line-height: 40rpx;
+  line-height: 50rpx;
 }
 input{
   border: 1px solid #90a4ae;
@@ -153,6 +153,17 @@ input{
   flex-direction: column;
   align-items: center;
   margin-top: 450rpx;
+}
+.shenghezhong button::after{
+  border: 0;
+}
+.shenghezhong button{
+  width: 180rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #fff;
+  background-color: red;
+  font-size: 25rpx;
 }
 .icon-shenhezhong2{
   color: #1a73e8;
